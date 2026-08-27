@@ -10,6 +10,7 @@ ec2 = boto3.client(
 
 response = ec2.describe_instances()
 
+
 print("\nEC2 Instance Inventory")
 print("-" * 80)
 
