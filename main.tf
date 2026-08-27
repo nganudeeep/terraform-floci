@@ -4,6 +4,8 @@ resource "aws_instance" "imported_ec2" {
   ami           = var.ami_id
   instance_type = var.instance_type
   #vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  #iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
+
 
   tags = {
     Name        = "Imported-EC2"
@@ -17,6 +19,8 @@ resource "aws_instance" "app_ec2" {
   ami           = var.ami_id
   instance_type = var.instance_type
   #vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  #iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
+
 
   root_block_device {
     volume_type           = "gp3"
@@ -40,6 +44,8 @@ resource "aws_instance" "count_ec2" {
   ami           = var.ami_id
   instance_type = var.instance_type
   #vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  #iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
+
 
   tags = {
     Name        = "Count-EC2-${count.index}"
@@ -57,6 +63,8 @@ resource "aws_instance" "foreach_ec2" {
   ami           = var.ami_id
   instance_type = var.instance_type
   #vpc_security_group_ids = [aws_security_group.ec2_sg.id]
+  #iam_instance_profile = aws_iam_instance_profile.ec2_profile.name
+
 
   tags = {
     Name        = each.value
