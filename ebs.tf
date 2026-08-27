@@ -12,6 +12,10 @@ resource "aws_ebs_volume" "ec2_data" {
   size              = 1
   type              = "gp3"
 
+  lifecycle {
+    prevent_destroy = true
+  }
+
   tags = {
     Name      = "Data-${each.key}"
     ManagedBy = "Terraform"
