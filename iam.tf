@@ -1,7 +1,6 @@
 #iam policy to read s3
 resource "aws_iam_policy" "s3_read" {
-  name        = "s3-read-policy"
-  description = "Allow read access to S3"
+  name = "s3-read-policy"
 
   policy = jsonencode({
     Version = "2012-10-17"
@@ -23,8 +22,7 @@ resource "aws_iam_policy" "s3_read" {
 
 #one more policy to read secrets
 resource "aws_iam_policy" "secrets_read" {
-  name        = "secrets-read-policy"
-  description = "Allow read access to Secrets Manager"
+  name = "secrets-read-policy"
 
   policy = jsonencode({
     Version = "2012-10-17"
