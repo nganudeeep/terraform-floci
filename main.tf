@@ -72,3 +72,24 @@ resource "aws_instance" "foreach_ec2" {
     ManagedBy   = "Terraform"
   }
 }
+
+module "test_ec2" {
+  source        = "./modules/ec2"
+  ami_id        = var.ami_id
+  instance_type = var.instance_type
+  instance_name = "module-test"
+}
+
+module "dev_ec2" {
+  source        = "./modules/ec2"
+  ami_id        = var.ami_id
+  instance_type = "t2.micro"
+  instance_name = "module-dev"
+}
+
+module "app_ec2_module" {
+  source        = "./modules/ec2"
+  ami_id        = var.ami_id
+  instance_type = "t2.micro"
+  instance_name = "module-app"
+}
