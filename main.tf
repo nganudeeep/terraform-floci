@@ -1,3 +1,4 @@
+#resources created are test once :)
 
 resource "aws_instance" "imported_ec2" {
   ami           = var.ami_id
